@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Seymour+One&display=swap');
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Seymour One", sans-serif;
     color: #fff;
-    
+
 }
 
 body {
-    background-image: url(./assets/screen_initial/bg.png);    
+    background-image: url('./assets/screen_initial/bg.png');
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     position: fixed;
     z-index: -1;
 }
 
-.container-jogo{
+.container-jogo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,14 +30,15 @@ body {
 
 
 
-.placar-score{
+.placar-score {
     font-size: 160px;
     font-weight: 400;
     line-height: 150px;
     text-shadow: 10px 10px 0 #000000;
     -webkit-text-stroke: 3px #000000;
 }
-.placar-name{
+
+.placar-name {
     font-size: 40px;
     font-weight: 400;
     text-shadow: 5px 5px 0 #000000;
@@ -46,12 +47,12 @@ body {
     letter-spacing: -3px;
 }
 
-.section-button{
+.section-button {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
-    position:absolute;
+    position: absolute;
     left: 0;
     right: 0;
     bottom: 30px;
@@ -60,39 +61,40 @@ body {
 
 }
 
-.section-button img:hover{
+.section-button img:hover {
     filter: drop-shadow(6px 6px 0 #000000);
     transform: rotate(-10deg);
-    
+
 }
 
-.section-button img:active{   
+.section-button img:active {
     filter: brightness(50%);
     transform: scale(0.98);
 }
 
-.imagem-humano,.imagem-maquina{
-    width: 950px;
+.imagem-humano,
+.imagem-maquina {
+    width: 40vw;
 }
 
-.button-class{
-    width: 200px;
+.button-class {
+    width: 8vw;
 }
 
-.div-humano-imagem{
+.div-humano-imagem {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -1%;
 }
 
-.div-maquina-imagem{
+.div-maquina-imagem {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -1%;
 
 }
 
-.container-resultado{
+.container-resultado {
     position: absolute;
     display: none;
     justify-content: center;
@@ -100,27 +102,27 @@ body {
     left: 0;
     right: 0;
     flex-direction: column;
-    bottom:100px;
+    bottom: 100px;
 }
 
-.resultado-titulo{
+.resultado-titulo {
     line-height: 120px;
     font-weight: 400;
-   
+
     font-size: 50px;
-    -webkit-text-stroke:  1px #000;
+    -webkit-text-stroke: 1px #000;
     text-shadow: 3px 3px 0 #000;
-    
+
 }
 
-.botoes-final{
+.botoes-final {
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
-.resultado-botao{
-    color:#000000;
+.resultado-botao {
+    color: #000000;
     background-color: #fff;
     font-size: 32px;
     border: 1px solid #000000;
@@ -135,4 +137,178 @@ body {
 .resultado-botao:hover {
     filter: drop-shadow(2px 2px 0 #000000);
     cursor: pointer;
-} 
+}
+
+@media screen and (max-width:1700px) {
+
+    .imagem-humano,
+    .imagem-maquina {
+        width: 50vw;
+    }
+
+    .button-class {
+        width: 11vw;
+    }
+
+}
+
+@media screen and (max-width:1300px) {
+
+    .imagem-humano,
+    .imagem-maquina {
+        width: 50vw;
+        height: 90vh;
+    }
+
+    .container-jogo {
+        gap: 180px;
+    }
+
+    .placar-score {
+        font-size: 120px;
+        line-height: 120px;
+
+    }
+
+    .placar-name {
+        font-size: 32px;
+    }
+
+    .button-class {
+        width: 12vw;
+    }
+
+    .resultado-titulo {
+        line-height: 80px;
+        font-size: 40px;
+    }
+
+    .resultado-botao {
+        font-size: 26px;
+        padding: 8px;
+
+    }
+
+}
+
+@media screen and (max-width:900px) {
+
+    .imagem-humano,
+    .imagem-maquina {
+        width: 45vw;
+        height: 90vh;
+    }
+
+    .container-jogo {
+        gap: 150px;
+    }
+
+    .container-jogo {
+        margin-top: 100px;
+    }
+
+    .button-class {
+        width: 15vw;
+    }
+
+    .placar-score {
+        font-size: 100px;
+        line-height: 90px;
+
+    }
+
+    .resultado-titulo {
+        line-height: 70px;
+        font-size: 32px;
+    }
+
+    .resultado-botao {
+        font-size: 20px;
+        padding: 8px;
+
+    }
+}
+
+@media screen and (max-width:700px) {
+
+    .placar-score {
+        font-size: 80px;
+        line-height: 70px;
+
+    }
+
+    .placar-name {
+        font-size: 28px;
+    }
+
+    .imagem-humano,
+    .imagem-maquina {
+        width: 40vw;
+        height: 55vh;
+    }
+
+    .container-resultado {
+        bottom: 40px;
+    }
+
+    .button-class {
+        width: 18vw;
+    }
+
+    .resultado-titulo {
+        line-height: 70px;
+        font-size: 30px;
+    }
+
+    .resultado-botao {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .botoes-final {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width:570px) {
+    .container-resultado {
+        bottom: 450px;
+    }
+
+    .section-button {
+        gap: 30px;
+
+    }
+
+}
+
+@media screen and (max-width:415px) {
+
+    .placar-score {
+        font-size: 70px;
+        line-height: 60px;
+
+    }
+
+    .container-resultado {
+        bottom: 380px;
+    }
+
+    .resultado-titulo {
+        line-height: 70px;
+        font-size: 24px;
+    }
+
+    .resultado-botao {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .section-button {
+        gap: 25px;
+        bottom: 10px;
+
+    }
+
+
+}
