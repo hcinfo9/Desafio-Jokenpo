@@ -6,8 +6,9 @@ const containerResultado= document.querySelector('.container-resultado')
 const textResultado = document.querySelector('.resultado-titulo')
 const placarHumano = document.querySelector('.container-humano h2')
 const placarMaquina = document.querySelector('.container-maquina h2')
-const audio = new Audio('./som/myinstants.mp3')
-const audio2 = new Audio('./som/congratulation.mp3')
+const audioMov = new Audio('./som/myinstants.mp3')
+const audioVitoria = new Audio('./som/congratulation.mp3')
+const audioDerrota = new Audio('./som/game-over.mp3')
 
 let pontosMaquina=0
 let pontosHumano=0
@@ -24,7 +25,7 @@ const jogadaHumana = escolha => {
     const escolhaMaquina=jogadaMaquina(['paper', 'rock', 'scissors'])
    
     const mostrarAnimacao = (elementoHumano, elementoMaquina) => {
-        audio.play()
+        audioMov.play()
         elementoHumano.setAttribute('src','./assets/Human_Animation/up.png')
         elementoMaquina.setAttribute('src','./assets/Machine_Animation/up.png')
 
@@ -78,10 +79,11 @@ const jogadaHumana = escolha => {
 }
 
 const iniciarJogo= (escolhaHumana, escolhaMaquina) => {
-    audio.pause()
-    audio2.play()
+    audioMov.pause()
+    
     if (escolhaHumana === escolhaMaquina){
         textResultado.innerHTML='Deu Empate!'
+        audioDerrota.play()
        
     }
 
@@ -89,11 +91,13 @@ const iniciarJogo= (escolhaHumana, escolhaMaquina) => {
         pontosHumano++
         placarHumano.innerHTML=pontosHumano
         textResultado.innerHTML='Você Ganhou!'
+        audioVitoria.play()
     }
     else{
         pontosMaquina++
         placarMaquina.innerHTML=pontosMaquina
         textResultado.innerHTML='Você Perdeu!'
+        audioDerrota.play()
     }
 
 }
