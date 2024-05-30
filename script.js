@@ -100,16 +100,16 @@ const iniciarJogo= (escolhaHumana, escolhaMaquina) => {
 
 const proximaJogada = () =>{
     containerButton.style.pointerEvents=''
-    imagem_humano.setAttribute('src', './assets/screen initial/human_Arm.png')
-    imagem_maquina.setAttribute('src', './assets/screen initial/AI Arm.png')
+    imagem_humano.setAttribute('src', './assets/screen_initial/human_Arm.png')
+    imagem_maquina.setAttribute('src', './assets/screen_initial/AI Arm.png')
     containerButton.style.display = 'flex'
     containerResultado.style.display='none'
 }
 
 const resetarPontos = () =>{
     containerButton.style.pointerEvents=''
-    imagem_humano.setAttribute('src', './assets/screen initial/human_Arm.png')
-    imagem_maquina.setAttribute('src', './assets/screen initial/AI Arm.png')
+    imagem_humano.setAttribute('src', './assets/screen_initial/human_Arm.png')
+    imagem_maquina.setAttribute('src', './assets/screen_initial/AI Arm.png')
     pontosHumano=0
     pontosMaquina=0
     placarHumano.innerHTML='0'
