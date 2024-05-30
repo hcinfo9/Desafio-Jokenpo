@@ -284,6 +284,12 @@ body {
 
 @media screen and (max-width:415px) {
 
+    .imagem-humano,
+    .imagem-maquina {
+        width: 50vw;
+        height: 65vh;
+    }
+
     .placar-score {
         font-size: 70px;
         line-height: 60px;
@@ -291,7 +297,7 @@ body {
     }
 
     .container-resultado {
-        bottom: 380px;
+        bottom: 420px;
     }
 
     .resultado-titulo {
@@ -311,4 +317,12 @@ body {
     }
 
 
+}
+
+@media screen and (max-width:375px) {
+
+    .container-jogo {
+        gap: 120px;
+        margin-top: 30px;
+    }
 }
