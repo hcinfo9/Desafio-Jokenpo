@@ -10,7 +10,7 @@
 }
 
 body {
-    background-image: url(./assets/3.png);    
+    background-image: url(./assets/screen\ initial/bg.png);    
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -75,7 +75,7 @@ body {
     width: 950px;
 }
 
-.paper, .rock, .scissors{
+.button-class{
     width: 200px;
 }
 

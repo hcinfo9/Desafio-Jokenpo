@@ -6,14 +6,16 @@ const containerResultado= document.querySelector('.container-resultado')
 const textResultado = document.querySelector('.resultado-titulo')
 const placarHumano = document.querySelector('.container-humano h2')
 const placarMaquina = document.querySelector('.container-maquina h2')
- 
+const audio = new Audio('./som/myinstants.mp3')
+const audio2 = new Audio('./som/congratulation.mp3')
+
 let pontosMaquina=0
 let pontosHumano=0
 
 
 const jogadaHumana = escolha => { 
-
-
+    
+    containerButton.style.pointerEvents='none'
     const jogadaMaquina = array => {
         let escolha = array[Math.floor(Math.random() * array.length)]
         return escolha
@@ -22,7 +24,7 @@ const jogadaHumana = escolha => {
     const escolhaMaquina=jogadaMaquina(['paper', 'rock', 'scissors'])
    
     const mostrarAnimacao = (elementoHumano, elementoMaquina) => {
-
+        audio.play()
         elementoHumano.setAttribute('src','./assets/Human_Animation/up.png')
         elementoMaquina.setAttribute('src','./assets/Machine_Animation/up.png')
 
@@ -76,7 +78,8 @@ const jogadaHumana = escolha => {
 }
 
 const iniciarJogo= (escolhaHumana, escolhaMaquina) => {
-
+    audio.pause()
+    audio2.play()
     if (escolhaHumana === escolhaMaquina){
         textResultado.innerHTML='Deu Empate!'
        
@@ -92,9 +95,11 @@ const iniciarJogo= (escolhaHumana, escolhaMaquina) => {
         placarMaquina.innerHTML=pontosMaquina
         textResultado.innerHTML='Você Perdeu!'
     }
+
 }
 
 const proximaJogada = () =>{
+    containerButton.style.pointerEvents=''
     imagem_humano.setAttribute('src', './assets/screen initial/human_Arm.png')
     imagem_maquina.setAttribute('src', './assets/screen initial/AI Arm.png')
     containerButton.style.display = 'flex'
@@ -102,6 +107,7 @@ const proximaJogada = () =>{
 }
 
 const resetarPontos = () =>{
+    containerButton.style.pointerEvents=''
     imagem_humano.setAttribute('src', './assets/screen initial/human_Arm.png')
     imagem_maquina.setAttribute('src', './assets/screen initial/AI Arm.png')
     pontosHumano=0
